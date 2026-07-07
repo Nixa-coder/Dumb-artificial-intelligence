@@ -12,7 +12,7 @@ namespace Dumb_artificial_intelligence
 
         static void Main(string[] args)
         {
-
+            Console.Title = "Dumb Artificial Intelligence";
             UcitajZnanje();
 
             Console.WriteLine("Hello, how may I assist you?");
@@ -32,11 +32,37 @@ namespace Dumb_artificial_intelligence
                     Delete(pitanje);
                     continue;
                 }
+                if (pitanje.StartsWith("rewrite"))
+                {
+                    Rewrite(pitanje);
+                    continue;
+                }
+                {
+                    
+                }
 
-                    ProveraDaLiPostojiRec(pitanje);
+                ProveraDaLiPostojiRec(pitanje);
             }
 
             
+        }
+
+        static void Rewrite(string command)
+        {
+            string QuestionForRewrite = command.Substring(8).Trim();
+            if (dic.ContainsKey(QuestionForRewrite))
+            {
+                Console.WriteLine($"Current answer: { dic[QuestionForRewrite]}");
+                Console.WriteLine("Please enter the new answer:");
+                string newAnswer = Console.ReadLine();
+                dic[QuestionForRewrite] = newAnswer;
+                SacuvajZnanje();
+                Console.WriteLine("Answer updated successfully.");
+            }
+            else
+            {
+                Console.WriteLine("That question doesnt exist in memory");
+            }
         }
         static void Delete(string command)
         {
