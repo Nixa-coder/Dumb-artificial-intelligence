@@ -9,7 +9,10 @@ But hey what do you expect, it is a DUMB AI.
 You can also delete the question and its answer if you dont like it:
 delete (type in the question you want to delete, without the brackets)
 exit (exits and saves the question and answers in the file, but you can also use the X on the top right, it has been fixed)
+
 New added:
 rewrite (rewrite the answer without deleting the question)
-
+help (shows all the commands)
+all questions (shows all questions)
+search (searches for questions containing the specified term)
 Thank you!!!
