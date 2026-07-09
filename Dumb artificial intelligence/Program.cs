@@ -64,16 +64,15 @@ namespace Dumb_artificial_intelligence
         private static void Search(string command)
         {
             string searchTerm = command.Substring(7).Trim();
-            if (dic.ContainsKey(searchTerm))
-            {
+            
                 foreach(var questions in dic.Keys)
-                {
+                
                     if(questions.Contains(searchTerm))
                     {
                         Console.WriteLine($"Question: {questions}");
                     }
-                }
-            }
+                
+            
         }
 
         public static void Help() 
@@ -103,11 +102,11 @@ namespace Dumb_artificial_intelligence
         }
         static string UcitajViseLinija()
         {
-            Console.WriteLine("(Ukucaj 'kraj' u novom redu kada završiš)");
+            Console.WriteLine("(Type 'end' on a new line when finished)");
             string sveZajedno = "";
             string linija;
 
-            while ((linija = Console.ReadLine()) != "kraj")
+            while ((linija = Console.ReadLine()) != "end")
             {
                 sveZajedno += linija + "\n";
             }
